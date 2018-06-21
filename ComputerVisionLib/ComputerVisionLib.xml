@@ -1,0 +1,7 @@
+<Library Name="ComputerVisionLib">
+ <Models>
+  <Model Name="ComputerVisionLib.ColorTracking"/>
+  <Model Name="ComputerVisionLib.ColorFilter"/>
+  <Model Name="ComputerVisionLib.Camera"/>
+ </Models>
+</Library>

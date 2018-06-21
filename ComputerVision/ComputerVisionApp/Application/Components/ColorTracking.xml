@@ -1,0 +1,18 @@
+<Component Model='ComputerVisionLib.ColorTracking' Name='ColorTracking' src='Components/ColorTracking.xml'  Description='This component uses OpenCV to create a binary image filtering out a color to track.'>
+  <fs>10</fs>
+
+  <Signals>
+    <Signal Description="Process run time each s." Input="0" Model="CDPSignal&lt;double&gt;" Name="Process Timer" Type="double" Unit="s/s"></Signal>
+    <Signal Description="Process interval [s]." Input="0" Model="CDPSignal&lt;double&gt;" Name="Process Period" Type="double" Unit="s"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;int&gt;" Name="xCoord" Type="int"></Signal>
+    <Signal Input="0" Model="CDPSignal&lt;int&gt;" Name="yCoord" Type="int"></Signal>
+  </Signals>
+
+  <Alarms>
+    <Alarm Description="A component was suspended!" Enabled="1" LoggingEnabled="1" Model="CDPAlarm" Name="Component Suspended" Text="Component was suspended!"></Alarm>
+  </Alarms>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+  </Timers>
+</Component>

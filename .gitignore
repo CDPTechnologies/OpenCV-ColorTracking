@@ -1,0 +1,9 @@
+**/debug/*
+**/release/*
+
+Makefile*
+QDoc/html
+
+config.xml
+.qmake.cache
+*.pro.user*

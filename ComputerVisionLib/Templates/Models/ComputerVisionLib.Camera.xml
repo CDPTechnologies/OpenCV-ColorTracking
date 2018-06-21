@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='iso-8859-1'?>
+<Model Name="ComputerVisionLib.Camera" Version="2.0">
+ <ModelTypeClass>C++</ModelTypeClass>
+ <BaseModel>CDPComponent</BaseModel>
+ <Priority>normal</Priority>
+ <fs>5</fs>
+ <Attributes>
+  <Attribute Name="Description" Type="string" Value="Simple component"/>
+  <Attribute Name="Model" Description="Implementation model used." ReadOnly="1" Required="1" Type="string" SaveOnChange="0" Value="ComputerVisionLib.Camera"/>
+  <Attribute Name="p_resolutionY" Description="Capture resolution in the y axis" LogEventOnChange="0" Type="int" SaveOnChange="1" Value="480" RouteMethod="RouteEvent"/>
+  <Attribute Name="p_resolutionX" Description="Capture resolution in the x axis" LogEventOnChange="0" Type="int" SaveOnChange="1" Value="640" RouteMethod="RouteEvent"/>
+  <Attribute Name="p_renderImage" Description="If set to true then the image feed from the camera is rendered." LogEventOnChange="0" Type="bool" SaveOnChange="1" Value="1" RouteMethod="RouteEvent"/>
+ </Attributes>
+
+ <Element Name="ColorFilters" Property="0"/>
+ <Element Name="ColorFilters/ColorFilter" AcceptsBase="ComputerVisionLib.ColorFilter" Property="0"/>
+ <Signals/>
+ <Parameters/>
+</Model>
