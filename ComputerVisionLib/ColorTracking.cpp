@@ -29,18 +29,10 @@ const string windowName2 = "Thresholded Image";
 const string windowName3 = "After Morphological Operations";
 const string trackbarWindowName = "Trackbars";
 
-void on_trackbar( int, void* )
+void onTrackbar( int, void* )
 {
-    //This function gets called whenever a
+    // This function gets called whenever a
     // trackbar position is changed
-}
-
-std::string intToString(int number){
-
-
-    std::stringstream ss;
-    ss << number;
-    return ss.str();
 }
 
 void createTrackbars(){
@@ -52,12 +44,12 @@ void createTrackbars(){
     //the max value the trackbar can move (eg. H_HIGH),
     //and the function that is called whenever the trackbar is moved(eg. on_trackbar)
     //                                  ---->    ---->     ---->
-    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, on_trackbar );
-    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, on_trackbar );
-    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, on_trackbar );
-    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, on_trackbar );
-    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, on_trackbar );
-    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, on_trackbar );
+    createTrackbar( "H_MIN", trackbarWindowName, &H_MIN, H_MAX, onTrackbar );
+    createTrackbar( "H_MAX", trackbarWindowName, &H_MAX, H_MAX, onTrackbar );
+    createTrackbar( "S_MIN", trackbarWindowName, &S_MIN, S_MAX, onTrackbar );
+    createTrackbar( "S_MAX", trackbarWindowName, &S_MAX, S_MAX, onTrackbar );
+    createTrackbar( "V_MIN", trackbarWindowName, &V_MIN, V_MAX, onTrackbar );
+    createTrackbar( "V_MAX", trackbarWindowName, &V_MAX, V_MAX, onTrackbar );
 }
 
 void morphOps(Mat &thresh){
@@ -79,7 +71,7 @@ void morphOps(Mat &thresh){
 void drawObject(int x,int y,Mat &frame){
 
     cv::circle(frame,cv::Point(x,y),10,cv::Scalar(0,0,255));
-    cv::putText(frame,intToString(x)+ " , " + intToString(y),cv::Point(x,y+20),1,1,Scalar(0,255,0));
+    cv::putText(frame,to_string(x)+ " , " + to_string(y),cv::Point(x,y+20),1,1,Scalar(0,255,0));
 }
 
 Point trackFilteredObject(Mat threshold, Mat &cameraFeed){
@@ -162,10 +154,6 @@ void ColorTracking::Main()
     //image will not appear without this waitKey() command
     cv::waitKey(30);
     Application::RunInMainThread([&] { Main(); });
-}
-
-ColorTracking::ColorTracking()
-{
 }
 
 ColorTracking::~ColorTracking()

@@ -14,7 +14,6 @@ namespace ComputerVisionLib {
 class ColorTracking : public CDPComponent
 {
 public:
-    ColorTracking();
     ~ColorTracking() override;
 
     virtual void Create(const char* fullName) override;

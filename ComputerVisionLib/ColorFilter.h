@@ -18,13 +18,13 @@ public:
 
     cv::Mat ApplyFilter(cv::Mat frame);
 private:
-    CDPProperty<std::string> nodeName;
-    CDPProperty<int> HMIN;
-    CDPProperty<int> HMAX;
-    CDPProperty<int> SMIN;
-    CDPProperty<int> SMAX;
-    CDPProperty<int> VMIN;
-    CDPProperty<int> VMAX;
+    CDPProperty<std::string> m_nodeName;
+    CDPProperty<int> m_HMIN;
+    CDPProperty<int> m_HMAX;
+    CDPProperty<int> m_SMIN;
+    CDPProperty<int> m_SMAX;
+    CDPProperty<int> m_VMIN;
+    CDPProperty<int> m_VMAX;
 };
 
 } // namespace ComputerVisionLib

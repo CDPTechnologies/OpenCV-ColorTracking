@@ -16,19 +16,19 @@ ColorFilter::ColorFilter(XMLElementEx* element, CDPBaseObject* owner)
     std::string name = element->GetAttributeValue("Name");
     auto flags = PropertyCreateFlags() | e_PropertySaveOnChange | e_PropertyReparent;
 
-    PropertyCreate(nodeName, owner, std::string(name).append(".Name"), flags, element);
+    PropertyCreate(m_nodeName, owner, std::string(name).append(".Name"), flags, element);
 
-    PropertyCreate(HMIN, owner, std::string(name).append(".HMIN"), flags, element);
-    PropertyCreate(HMAX, owner, std::string(name).append(".HMAX"), flags, element);
-    PropertyCreate(SMIN, owner, std::string(name).append(".SMIN"), flags, element);
-    PropertyCreate(SMAX, owner, std::string(name).append(".SMAX"), flags, element);
-    PropertyCreate(VMIN, owner, std::string(name).append(".VMIN"), flags, element);
-    PropertyCreate(VMAX, owner, std::string(name).append(".VMAX"), flags, element);
+    PropertyCreate(m_HMIN, owner, std::string(name).append(".HMIN"), flags, element);
+    PropertyCreate(m_HMAX, owner, std::string(name).append(".HMAX"), flags, element);
+    PropertyCreate(m_SMIN, owner, std::string(name).append(".SMIN"), flags, element);
+    PropertyCreate(m_SMAX, owner, std::string(name).append(".SMAX"), flags, element);
+    PropertyCreate(m_VMIN, owner, std::string(name).append(".VMIN"), flags, element);
+    PropertyCreate(m_VMAX, owner, std::string(name).append(".VMAX"), flags, element);
 }
 
 const std::string ColorFilter::GetNodeName() const
 {
-    return nodeName;
+    return m_nodeName;
 }
 
 std::string ColorFilter::GetNodeTypeName() const
@@ -38,13 +38,13 @@ std::string ColorFilter::GetNodeTypeName() const
 
 void ColorFilter::FillNodeChildren(CDP::StudioAPI::NodeStream &serializer) const
 {
-    serializer << AdoptedChild(nodeName)
-               << AdoptedChild(HMIN)
-               << AdoptedChild(HMAX)
-               << AdoptedChild(SMIN)
-               << AdoptedChild(SMAX)
-               << AdoptedChild(VMIN)
-               << AdoptedChild(VMAX);
+    serializer << AdoptedChild(m_nodeName)
+               << AdoptedChild(m_HMIN)
+               << AdoptedChild(m_HMAX)
+               << AdoptedChild(m_SMIN)
+               << AdoptedChild(m_SMAX)
+               << AdoptedChild(m_VMIN)
+               << AdoptedChild(m_VMAX);
 }
 
 cv::Mat ColorFilter::ApplyFilter(cv::Mat frame)
@@ -53,7 +53,7 @@ cv::Mat ColorFilter::ApplyFilter(cv::Mat frame)
     cv::Mat HSV;
 
     cv::cvtColor(frame,HSV,cv::COLOR_BGR2HSV);
-    cv::inRange(HSV,cv::Scalar(HMIN,SMIN,VMIN),cv::Scalar(HMAX,SMAX,VMAX),threshold);
+    cv::inRange(HSV,cv::Scalar(m_HMIN,m_SMIN,m_VMIN),cv::Scalar(m_HMAX,m_SMAX,m_VMAX),threshold);
 
     cv::Mat erodeElement = cv::getStructuringElement( cv::MORPH_RECT,cv::Size(3,3));
     //dilate with larger element so make sure object is nicely visible
@@ -67,6 +67,6 @@ cv::Mat ColorFilter::ApplyFilter(cv::Mat frame)
     cv::dilate(threshold,threshold,dilateElement);
     cv::dilate(threshold,threshold,dilateElement);
 
-    cv::imshow(nodeName.c_str(),threshold);
+    cv::imshow(m_nodeName.c_str(),threshold);
     return threshold;
 }
