@@ -27,7 +27,15 @@
     <Parameter Name="Network disabled"      Unit="Bool"   Value="0"     PreviousValue="0"   TimeLastChanged="0" Description="Set == 1 to disable messenger network send and isolate this application from the network."></Parameter>
   </Parameters>
   <Alarms>
-    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component 'Messenger' was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
+    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component &apos;Messenger&apos; was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
   </Alarms>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+    <Timer Description="Timer used for state-transition from Init to Running." Model="CDPTimerMs" Name="TimerInitTimeout"></Timer>
+    <Timer Description="Timer used to decide how often to send notify messages." Model="CDPTimerMs" Name="TimerSendNotify"></Timer>
+    <Timer Description="Timer used to decide how often to update statistics signals." Model="CDPTimerMs" Name="StatisticsSignalsUpdateRate"></Timer>
+    <Timer Description="Timer used to decide how often to update failure signals." Model="CDPTimerMs" Name="FailureSignalsUpdateRate"></Timer>
+  </Timers>
 
 </Component>

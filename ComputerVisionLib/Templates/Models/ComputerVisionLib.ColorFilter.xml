@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="iso-8859-1"?>
-<Model Name="ComputerVisionLib.ColorFilter" Version="2.0">
+<Model Name="ComputerVisionLib.ColorFilter" >
   <ModelTypeClass>C++</ModelTypeClass>
   <BaseModel>CDPNode</BaseModel>
 
   <Attributes>
-    <Attribute Name="Name" Type="string" Required="1" ReadOnly="0"/>
-    <Attribute Name="Model" Type="string" Required="1" Value="ComputerVisionLib.ColorFilter" ReadOnly="1"></Attribute>
-    <Attribute Name="Description" Type="string" Value="Filters out a color based on a set of parameters, returns a binary image." ReadOnly="1" Required="1"/>
-    <Attribute Name="HMIN" Type="int" Required="1" Value="0" ReadOnly="0"/>
-    <Attribute Name="HMAX" Type="int" Required="1" Value="255" ReadOnly="0"/>
-    <Attribute Name="SMIN" Type="int" Required="1" Value="0" ReadOnly="0"/>
-    <Attribute Name="SMAX" Type="int" Required="1" Value="255" ReadOnly="0"/>
-    <Attribute Name="VMIN" Type="int" Required="1" Value="0" ReadOnly="0"/>
-    <Attribute Name="VMAX" Type="int" Required="1" Value="255" ReadOnly="0"/>
+    <Attribute Name="Name" ReadOnly="0" Required="1" Type="string" />
+    <Attribute Name="Model" ReadOnly="1" Required="1" Type="string" Value="ComputerVisionLib.ColorFilter" />
+    <Attribute Name="Description" ReadOnly="1" Required="1" Type="string" Value="Filters out a color based on a set of parameters, returns a binary image." />
+    <Attribute Name="HMIN" ReadOnly="0" Required="1" Type="int" Value="0" />
+    <Attribute Name="HMAX" ReadOnly="0" Required="1" Type="int" Value="255" />
+    <Attribute Name="SMIN" ReadOnly="0" Required="1" Type="int" Value="0" />
+    <Attribute Name="SMAX" ReadOnly="0" Required="1" Type="int" Value="255" />
+    <Attribute Name="VMIN" ReadOnly="0" Required="1" Type="int" Value="0" />
+    <Attribute Name="VMAX" ReadOnly="0" Required="1" Type="int" Value="255" />
   </Attributes>
 
 </Model>

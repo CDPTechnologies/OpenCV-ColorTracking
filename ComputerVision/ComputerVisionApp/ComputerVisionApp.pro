@@ -17,3 +17,5 @@ DISTFILES += \
     $$files(Application/www/*.*, true)
 
 load(cdp)
+
+ID = 89698498420149 # do not change

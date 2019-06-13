@@ -15,7 +15,11 @@
     <Signal Name="Process Period" Value="0.0" Unit="s" Type="double" Description="Process interval [s]."  Model="CDPSignal&lt;double&gt;"></Signal>
   </Signals>
   <Alarms>
-    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component 'CDP' was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
+    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component &apos;CDP&apos; was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
   </Alarms>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+  </Timers>
 
 </Component>

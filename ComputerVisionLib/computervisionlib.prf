@@ -7,3 +7,4 @@ LIBS += -l$$LIBNAME$$EXT
 
 DEPSFILE = $$PWD/$$lower($$LIBNAME)_dependencies.pri
 exists($$DEPSFILE): include($$DEPSFILE)
+CONFIG *= $$DEPS

@@ -1,4 +1,4 @@
-CDPVERSION = 4.7
+CDPVERSION = $$CDPVERSION_IN
 TYPE = library
 PROJECTNAME = ComputerVisionLib
 
@@ -17,7 +17,7 @@ SOURCES += \
     ColorFilter.cpp \
     Camera.cpp
 
-DISTFILES += $$files(*.xml, true) \
+DISTFILES += \$\$files(*.xml, true) \
     Templates/Models/ComputerVisionLib.ColorTracking.xml \
     Templates/Models/ComputerVisionLib.Camera.xml \
     Templates/Models/ComputerVisionLib.ColorFilter.xml

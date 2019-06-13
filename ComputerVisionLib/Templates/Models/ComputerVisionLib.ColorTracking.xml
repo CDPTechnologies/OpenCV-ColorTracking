@@ -1,15 +1,15 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
-<Model Version="2.0" Name="ComputerVisionLib.ColorTracking">
+<Model Name="ComputerVisionLib.ColorTracking" >
  <ModelTypeClass>C++</ModelTypeClass>
  <BaseModel>CDPComponent</BaseModel>
- <Priority>normal</Priority>
- <fs>10</fs>
+ <Element Name="Priority" Value="normal"/>
+ <Element Name="fs" Value="10"/>
  <Attributes>
-  <Attribute Type="string" Value="This component uses OpenCV to create a binary image filtering out a color to track." Name="Description"/>
-  <Attribute ReadOnly="1" Type="string" Value="ComputerVisionLib.ColorTracking" Description="Implementation model used." Required="1" SaveOnChange="0" Name="Model"/>
+  <Attribute Name="Description" Type="string" Value="This component uses OpenCV to create a binary image filtering out a color to track." />
+  <Attribute Description="Implementation model used." Name="Model" ReadOnly="1" Required="1" SaveOnChange="0" Type="string" Value="ComputerVisionLib.ColorTracking" />
  </Attributes>
  <Signals>
-  <Signal Type="int" Model="CDPSignal&lt;int&gt;" Input="0" Name="xCoord"/>
-  <Signal Type="int" Model="CDPSignal&lt;int&gt;" Input="0" Name="yCoord"/>
+  <Signal Input="0" Model="CDPSignal&lt;int&gt;" Name="xCoord" Type="int" />
+  <Signal Input="0" Model="CDPSignal&lt;int&gt;" Name="yCoord" Type="int" />
  </Signals>
 </Model>

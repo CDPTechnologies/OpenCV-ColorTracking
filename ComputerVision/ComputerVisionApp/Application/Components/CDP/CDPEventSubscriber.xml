@@ -23,7 +23,7 @@
   </Signals>
 
   <Alarms>
-    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component 'CDPEventSubscriber' was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
+    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component &apos;CDPEventSubscriber&apos; was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
   </Alarms>
 
   <Parameters>
@@ -41,5 +41,12 @@
             TimeLastChanged="" Description="Specifies whether events should be logged to file."></Parameter>
     <Parameter Name="MaxHistoryEventListSize" Unit="Events" Value="1000" Description="Specifies the max size of the History Event List. The oldest events are removed if limit is reached."></Parameter>
   </Parameters>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+    <Timer Description="Timer used to retrieve extended information. Period is configured in Parameter ExtendedUpdateRequestPeriod." Model="CDPParameterTimerMs" Name="ExtendedUpdateRequestPeriodTimer"></Timer>
+    <Timer Description="Timer used to resend subscription request to former unconfirmed subscriptions requests. Period is configured in Parameter SubscriptConfirmationPeriod." Model="CDPParameterTimerMs" Name="SubscriptConfirmationPeriodTimer"></Timer>
+    <Timer Description="Timer used to send subscription request to configured providers. Period is configured in Parameter SubscriptionUpdatePeriod." Model="CDPParameterTimerMs" Name="SubscriptionUpdatePeriodTimer"></Timer>
+  </Timers>
 
 </Component>

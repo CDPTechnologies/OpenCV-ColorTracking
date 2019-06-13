@@ -4,7 +4,7 @@
   <fs>10</fs>
 
   <Alarms>
-    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component 'EthernetManager' was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
+    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component &apos;EthernetManager&apos; was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
     <Alarm Name="EthInterfaceTakenDownTrafficJam" Level="Error" Enabled="1" Text="Ethernet interface has been taken down because of too large traffic (over limit), interface index=N" Description="Ethernet interface has been taken down because receiving more than the limit specified in LimitTrafficJamReceive_kB_sec. Text will be updated to contain interface index (0 or 1)."></Alarm>
     <Alarm Name="EthLinkDown_ETH0" Level="Error" Enabled="1" Text="ETH0 link is down (or error occurred)." Description="ETH0 link is down (or error occurred)."></Alarm>
     <Alarm Name="EthLinkDown_ETH1" Level="Error" Enabled="1" Text="ETH1 link is down (or error occurred)." Description="ETH1 link is down (or error occurred)."></Alarm>
@@ -20,7 +20,7 @@
   <Signals>
     <Signal Name="Process Timer" Value="0.0" Unit="s/s" Type="double" Description="Process run time each s."  Model="CDPSignal&lt;double&gt;"></Signal>
     <Signal Name="Process Period" Value="0.0" Unit="s" Type="double" Description="Process interval [s]."  Model="CDPSignal&lt;double&gt;"></Signal>
-    <Signal Name="EthLinkValue_ETH0" Type="int" Model="CDPSignal&lt;int&gt;" Description="0:Not updated or routing not up yet, >=1:Link established (OK, link up), -1:No link established (ERROR, link down), <=-2:Error or function not supported (ERROR)."></Signal>
+    <Signal Name="EthLinkValue_ETH0" Type="int" Model="CDPSignal&lt;int&gt;" Description="0:Not updated or routing not up yet, &gt;=1:Link established (OK, link up), -1:No link established (ERROR, link down), &lt;=-2:Error or function not supported (ERROR)."></Signal>
     <Signal Name="UdpUnicastReceived_ETH0" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of udp unicast received on this interface last sec."></Signal>
     <Signal Name="UdpBroadcastReceived_ETH0" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of udp broadcast received on this interface last sec."></Signal>
     <Signal Name="TcpReceived_ETH0" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of tcp received on this interface last sec."></Signal>
@@ -30,7 +30,7 @@
     <Signal Name="TcpSent_ETH0" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of tcp sent on this interface last sec."></Signal>
     <Signal Name="TotalSent_ETH0" Type="double" Model="CDPSignal&lt;double&gt;" Description="Total amount (kiloBytes) of udp and tcp sent on this interface last sec."></Signal>
 
-    <Signal Name="EthLinkValue_ETH1" Type="int" Model="CDPSignal&lt;int&gt;" Description="0:Not updated or routing not up yet, >=1:Link established (OK, link up), -1:No link established (ERROR, link down), <=-2:Error or function not supported (ERROR)."></Signal>
+    <Signal Name="EthLinkValue_ETH1" Type="int" Model="CDPSignal&lt;int&gt;" Description="0:Not updated or routing not up yet, &gt;=1:Link established (OK, link up), -1:No link established (ERROR, link down), &lt;=-2:Error or function not supported (ERROR)."></Signal>
     <Signal Name="UdpUnicastReceived_ETH1" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of udp unicast received on this interface last sec."></Signal>
     <Signal Name="UdpBroadcastReceived_ETH1" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of udp broadcast received on this interface last sec."></Signal>
     <Signal Name="TcpReceived_ETH1" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of tcp received on this interface last sec."></Signal>
@@ -40,4 +40,9 @@
     <Signal Name="TcpSent_ETH1" Type="double" Model="CDPSignal&lt;double&gt;" Description="Amount (kiloBytes) of tcp sent on this interface last sec."></Signal>
     <Signal Name="TotalSent_ETH1" Type="double" Model="CDPSignal&lt;double&gt;" Description="Total amount (kiloBytes) of udp and tcp sent on this interface last sec."></Signal>
   </Signals>
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+    <Timer Description="Timer used to update statistics signals. Timeout-delay is configured in Parameter StatisticsSignalsUpdateInterval." Model="CDPParameterTimer" Name="StatisticsSignalsUpdateIntervalTimer"></Timer>
+  </Timers>
 </Component>

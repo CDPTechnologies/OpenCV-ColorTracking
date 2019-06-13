@@ -25,11 +25,16 @@
   </Parameters>
 
   <Alarms>
-    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component 'MessengerIOServer' was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
+    <Alarm Name="Component Suspended" Level="Warning" Enabled="1" Text="Component &apos;MessengerIOServer&apos; was suspended!" Trig="0" Description="A component was suspended!"  Model="CDPAlarm"></Alarm>
     <Alarm Name="Transmission Error"    Level="Warning" Enabled="1"           Text="MessengerIOServer transmission-error alarm"                                         Description="Transmission-error alarm"></Alarm>
   </Alarms>
 
-  <IOConfig>
-  </IOConfig>
+  <IOConfig></IOConfig>
+  
+
+  <Timers>
+    <Timer Description="Timer to measure CDPComponent processing." Model="CDPTimer" Name="ProcessTimer"></Timer>
+    <Timer Description="Timer used to delay setting Transmission Error alarm. Timeout-delay is configured in Parameter SignalTimeout." Model="CDPParameterTimer" Name="SignalTimeoutTimer"></Timer>
+  </Timers>
 
 </Component>

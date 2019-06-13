@@ -1,19 +1,19 @@
 <?xml version='1.0' encoding='iso-8859-1'?>
-<Model Name="ComputerVisionLib.Camera" Version="2.0">
+<Model Name="ComputerVisionLib.Camera" >
  <ModelTypeClass>C++</ModelTypeClass>
  <BaseModel>CDPComponent</BaseModel>
- <Priority>normal</Priority>
- <fs>5</fs>
+ <Element Name="Priority" Value="normal"/>
+ <Element Name="fs" Value="5"/>
  <Attributes>
-  <Attribute Name="Description" Type="string" Value="Simple component"/>
-  <Attribute Name="Model" Description="Implementation model used." ReadOnly="1" Required="1" Type="string" SaveOnChange="0" Value="ComputerVisionLib.Camera"/>
-  <Attribute Name="p_resolutionY" Description="Capture resolution in the y axis" LogEventOnChange="0" Type="int" SaveOnChange="1" Value="480" RouteMethod="RouteEvent"/>
-  <Attribute Name="p_resolutionX" Description="Capture resolution in the x axis" LogEventOnChange="0" Type="int" SaveOnChange="1" Value="640" RouteMethod="RouteEvent"/>
-  <Attribute Name="p_renderImage" Description="If set to true then the image feed from the camera is rendered." LogEventOnChange="0" Type="bool" SaveOnChange="1" Value="1" RouteMethod="RouteEvent"/>
+  <Attribute Name="Description" Type="string" Value="Simple component" />
+  <Attribute Description="Implementation model used." Name="Model" ReadOnly="1" Required="1" SaveOnChange="0" Type="string" Value="ComputerVisionLib.Camera" />
+  <Attribute Description="Capture resolution in the y axis" LogEventOnChange="0" Name="p_resolutionY" RouteMethod="RouteEvent" SaveOnChange="1" Type="int" Value="480" />
+  <Attribute Description="Capture resolution in the x axis" LogEventOnChange="0" Name="p_resolutionX" RouteMethod="RouteEvent" SaveOnChange="1" Type="int" Value="640" />
+  <Attribute Description="If set to true then the image feed from the camera is rendered." LogEventOnChange="0" Name="p_renderImage" RouteMethod="RouteEvent" SaveOnChange="1" Type="bool" Value="1" />
  </Attributes>
 
- <Element Name="ColorFilters" Property="0"/>
- <Element Name="ColorFilters/ColorFilter" AcceptsBase="ComputerVisionLib.ColorFilter" Property="0"/>
- <Signals/>
- <Parameters/>
+ <Element Name="ColorFilters" Property="0" />
+ <Element AcceptsBase="ComputerVisionLib.ColorFilter" Name="ColorFilters/ColorFilter" Property="0" />
+ <Signals />
+ <Parameters />
 </Model>
